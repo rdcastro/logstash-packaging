@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=1.1.13
+VERSION=1.2.1
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 MAINTAINER="<lesspublic@gmail.com>"
 JAR_FILE=usr/share/logstash/logstash.jar
@@ -31,7 +31,7 @@ do
 done
 
 if [ ! -f "$CURRENT_DIR/$JAR_FILE" ]; then
-  wget http://logstash.objects.dreamhost.com/release/logstash-${VERSION}-monolithic.jar -O $CURRENT_DIR/$JAR_FILE
+  wget http://logstash.objects.dreamhost.com/release/logstash-${VERSION}-flatjar.jar -O $CURRENT_DIR/$JAR_FILE
 fi
 
 fpm \
