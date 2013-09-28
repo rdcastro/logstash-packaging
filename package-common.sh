@@ -31,7 +31,11 @@ do
 done
 
 if [ ! -f "$CURRENT_DIR/$JAR_FILE" ]; then
-  wget http://logstash.objects.dreamhost.com/release/logstash-${VERSION}-flatjar.jar -O $CURRENT_DIR/$JAR_FILE
+  #wget http://logstash.objects.dreamhost.com/release/logstash-${VERSION}-flatjar.jar -O $CURRENT_DIR/$JAR_FILE
+
+  # TODO(rdc): use official package (above) once LOGSTASH-1334 is fixed and
+  # Google API client (+ Google plugins) can be used.
+  wget http://commondatastorage.googleapis.com/logstash%2Flogstash-1.2.1-monolithic.jar -O $CURRENT_DIR/$JAR_FILE -O $CURRENT_DIR/$JAR_FILE
 fi
 
 fpm \
